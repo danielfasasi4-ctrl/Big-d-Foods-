@@ -1,554 +1,119 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Big D Foods — Home</title>
-  <meta name="description" content="Big D Foods - tasty local meals. Order Rice & Beans, Beans & Plantain, Beans & Yam, Indomie & Egg, Bread & Tea, Rice & Plantain." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big D Foods</title>
   <style>
-    :root{
-      --bg:#0f1114;
-      --card:#0f1720;
-      --muted:#aeb6b8;
-      --accent:#c59a41; /* classy gold */
-      --white:#ffffff;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.06);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, rgba(10,12,14,1) 0%, rgba(18,20,22,1) 100%);
-      color:var(--white);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fefefe, #fff7e6);
+      color: #333;
     }
 
-    /* NAV */
-    .nav {
-      position:fixed;
-      left:0; right:0; top:0;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 28px;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(15,17,20,0.55), rgba(15,17,20,0.15));
-      z-index:50;
-      border-bottom:1px solid rgba(255,255,255,0.03);
-    }
-    .brand { display:flex; gap:12px; align-items:center; }
-    .logo {
-      width:46px; height:46px;
-      border-radius:8px;
-      background:linear-gradient(135deg, var(--accent), #8f6f2f);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:700; color:var(--bg);
-      box-shadow: 0 6px 20px rgba(197,154,65,0.15), inset 0 -6px 20px rgba(255,255,255,0.05);
-    }
-    .brand h1{font-size:18px;margin:0;font-weight:700}
-    .nav-links { display:flex; gap:16px; align-items:center }
-    .nav-links a {
-      color:var(--muted);
-      text-decoration:none;
-      font-weight:600;
-      letter-spacing:0.2px;
-      padding:8px 10px;
-      border-radius:8px;
-    }
-    .nav-links a:hover{ color:var(--white); background:var(--glass-2) }
-
-    /* HERO */
-    .hero {
-      min-height:84vh;
-      display:grid;
-      grid-template-columns: 1fr 460px;
-      gap:36px;
-      align-items:center;
-      padding:120px 6% 60px;
-    }
-    .hero-left {
-      max-width:720px;
-    }
-    .eyebrow {
-      display:inline-block;
-      background:rgba(255,255,255,0.04);
-      padding:6px 10px;
-      border-radius:999px;
-      color:var(--accent);
-      font-weight:700;
-      font-size:13px;
-      margin-bottom:18px;
-    }
-    .hero h2 {
-      margin:0 0 18px 0;
-      font-size:44px;
-      line-height:1.02;
-      letter-spacing:-0.6px;
-      color:var(--white);
-    }
-    .hero p { color:var(--muted); font-size:16px; margin:0 0 22px 0; }
-
-    .cta {
-      display:flex; gap:12px; align-items:center;
-    }
-    .btn {
-      background:var(--accent);
-      color:var(--bg);
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:700;
-      text-decoration:none;
-      box-shadow: 0 10px 30px rgba(197,154,65,0.12);
-    }
-    .btn.secondary {
-      background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--white);
+    header {
+      background-color: #f9b208;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
 
-    /* side card with quick order */
-    .hero-right {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border-radius:14px;
-      padding:18px;
-      box-shadow: 0 8px 30px rgba(2,6,12,0.6);
-      border:1px solid rgba(255,255,255,0.03);
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
     }
-    .card-title { font-weight:700; color:var(--accent); margin:0 0 12px 0 }
-    .dish-preview { display:flex; gap:12px; align-items:center; margin:12px 0 }
-    .dish-preview img{ width:78px; height:58px; object-fit:cover; border-radius:8px; }
-    .dish-info { font-size:14px }
-    .dish-info .name { font-weight:700 }
-    .dish-info .price { color:var(--muted); font-size:13px }
 
-    /* MENU GRID */
-    .container { padding:30px 6% 80px; max-width:1200px; margin:0 auto; }
-    .section-title { color:var(--white); font-size:20px; font-weight:700; margin:8px 0 14px; }
-    .menu-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:18px; }
-
-    .menu-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:0;
-      border-radius:12px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,0.03);
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .menu-card img { width:100%; height:160px; object-fit:cover; display:block; }
-    .menu-card .meta { padding:12px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-    .menu-card .meta .title { font-weight:700 }
-    .menu-card .meta .price { color:var(--accent); font-weight:700 }
 
-    .menu-card .desc { padding:0 12px 12px 12px; color:var(--muted); font-size:14px }
-
-    /* ORDER FORM */
-    .order-area {
-      margin-top:18px;
-      padding:14px;
-      background:rgba(255,255,255,0.02);
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.03);
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
-    .order-row { display:flex; gap:8px; align-items:center; margin:8px 0 }
-    .order-row select, .order-row input[type=number] {
-      background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--white); padding:8px 10px; border-radius:8px;
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
-    .order-summary { margin-top:12px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-    .total { font-weight:800; font-size:20px; color:var(--accent) }
 
-    /* ABOUT step by step */
-    .steps { display:grid; gap:12px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); margin-top:12px; }
-    .step { background:var(--glass); padding:14px; border-radius:10px; border:1px solid rgba(255,255,255,0.03) }
-    .step .num { display:inline-block; background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:8px; font-weight:700; color:var(--accent); margin-bottom:10px }
-
-    /* footer & contact */
-    footer { padding:30px 6%; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03); margin-top:40px }
-    .contact { display:flex; gap:12px; flex-direction:column; max-width:520px }
-
-    /* responsive */
-    @media (max-width:980px){
-      .hero { grid-template-columns:1fr; padding-top:110px; gap:18px; }
-      .hero-right{ order:2 }
+    .card h3 {
+      margin: 15px 0 5px;
+      color: #222;
     }
-    @media (max-width:560px){
-      .nav { padding:14px 14px }
-      .brand h1{font-size:16px}
-      .hero h2{font-size:28px}
-      .hero { padding:90px 4% 40px }
+
+    .price {
+      color: #f9b208;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="brand">
-      <div class="logo">BD</div>
-      <div>
-        <h1>Big D Foods</h1>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">Tasty local meals • Fast & Fresh</div>
-      </div>
-    </div>
-
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#order">Order</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#order">Order Now</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="home" class="hero" role="banner" aria-label="Big D Foods hero">
-    <div class="hero-left">
-      <span class="eyebrow">Fresh • Homemade • Affordable</span>
-      <h2>Delicious local meals that remind you of home.</h2>
-      <p>Big D Foods serves hearty plates — rice & beans, beans with plantain, beans & yam, Indomie & egg, bread & tea and more. Fast pickup or delivery within the local area.</p>
-
-      <div class="cta">
-        <a class="btn" href="#menu">View Menu</a>
-        <a class="btn secondary" href="#about">How we work</a>
-      </div>
-
-      <!-- quick highlights -->
-      <div style="display:flex; gap:14px; margin-top:22px; flex-wrap:wrap">
-        <div style="background:var(--glass); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03)">
-          <div style="font-weight:700">Fast Delivery</div>
-          <div style="color:var(--muted); font-size:13px">Hot & fresh</div>
-        </div>
-        <div style="background:var(--glass); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03)">
-          <div style="font-weight:700">Local Flavors</div>
-          <div style="color:var(--muted); font-size:13px">Homemade recipes</div>
-        </div>
-      </div>
-    </div>
-
-    <aside class="hero-right" aria-label="Quick order preview">
-      <div class="card-title">Quick Picks</div>
-
-      <div class="dish-preview">
-        <img src="https://source.unsplash.com/800x600/?rice%20beans" alt="Rice and Beans">
-        <div class="dish-info">
-          <div class="name">Rice & Beans</div>
-          <div class="price">₦1,500</div>
-        </div>
-      </div>
-
-      <div class="dish-preview">
-        <img src="https://source.unsplash.com/800x600/?beans%20plantain" alt="Beans and Plantain">
-        <div class="dish-info">
-          <div class="name">Beans & Plantain</div>
-          <div class="price">₦1,300</div>
-        </div>
-      </div>
-
-      <div class="dish-preview" style="margin-bottom:6px">
-        <img src="https://source.unsplash.com/800x600/?yam%20beans" alt="Beans and Yam">
-        <div class="dish-info">
-          <div class="name">Beans & Yam</div>
-          <div class="price">₦1,400</div>
-        </div>
-      </div>
-
-      <div style="margin-top:12px">
-        <a class="btn" href="#order">Place Order</a>
-      </div>
-    </aside>
+  <header>
+    Big D Foods 🍽️
   </header>
 
-  <!-- MENU -->
-  <main id="menu" class="container">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap">
-      <div>
-        <div class="section-title">Our Menu</div>
-        <div style="color:var(--muted)">Hand-picked favorites — great value and freshly prepared.</div>
-      </div>
-      <div style="color:var(--muted); font-size:14px">Design: Modern & Classy • Prices in NGN</div>
+  <section class="menu">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1612197527762-83dfaa6a0fa7" alt="Rice and Beans">
+      <h3>Rice and Beans</h3>
+      <p class="price">₦1500</p>
     </div>
 
-    <div class="menu-grid" style="margin-top:18px">
-      <!-- Item: Rice & Beans -->
-      <article class="menu-card" aria-labelledby="ricebeans">
-        <img src="https://source.unsplash.com/800x600/?rice,beans,plate" alt="Rice & Beans">
-        <div class="meta">
-          <div class="title" id="ricebeans">Rice & Beans</div>
-          <div class="price">₦1,500</div>
-        </div>
-        <div class="desc">A generous plate of rice served with savory beans — a hearty favorite.</div>
-      </article>
-
-      <!-- Beans & Plantain -->
-      <article class="menu-card" aria-labelledby="beansplantain">
-        <img src="https://source.unsplash.com/800x600/?beans,plantain" alt="Beans & Plantain">
-        <div class="meta">
-          <div class="title" id="beansplantain">Beans & Plantain</div>
-          <div class="price">₦1,300</div>
-        </div>
-        <div class="desc">Well-cooked beans served with sweet fried plantain — comfort food.</div>
-      </article>
-
-      <!-- Beans & Yam -->
-      <article class="menu-card" aria-labelledby="beansyam">
-        <img src="https://source.unsplash.com/800x600/?beans,yam" alt="Beans & Yam">
-        <div class="meta">
-          <div class="title" id="beansyam">Beans & Yam</div>
-          <div class="price">₦1,400</div>
-        </div>
-        <div class="desc">Soft yam paired with seasoned beans — filling and tasty.</div>
-      </article>
-
-      <!-- Indomie & Egg -->
-      <article class="menu-card" aria-labelledby="indomieegg">
-        <img src="https://source.unsplash.com/800x600/?noodles,egg" alt="Indomie & Egg">
-        <div class="meta">
-          <div class="title" id="indomieegg">Indomie & Egg</div>
-          <div class="price">₦1,200</div>
-        </div>
-        <div class="desc">Quick and delicious noodles served with a fried egg on top.</div>
-      </article>
-
-      <!-- Bread & Tea -->
-      <article class="menu-card" aria-labelledby="breadtea">
-        <img src="https://source.unsplash.com/800x600/?bread,tea" alt="Bread & Tea">
-        <div class="meta">
-          <div class="title" id="breadtea">Bread & Tea</div>
-          <div class="price">₦1,200</div>
-        </div>
-        <div class="desc">Fresh bread with hot tea — perfect for a light breakfast or snack.</div>
-      </article>
-
-      <!-- Rice & Plantain -->
-      <article class="menu-card" aria-labelledby="riceplantain">
-        <img src="https://source.unsplash.com/800x600/?rice,plantain" alt="Rice & Plantain">
-        <div class="meta">
-          <div class="title" id="riceplantain">Rice & Plantain</div>
-          <div class="price">₦1,700</div>
-        </div>
-        <div class="desc">Rice served with sweet fried plantain — simple and satisfying.</div>
-      </article>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604156789338-316d6ab96cc5" alt="Beans and Yam">
+      <h3>Beans and Yam</h3>
+      <p class="price">₦1400</p>
     </div>
 
-    <!-- ORDER SECTION -->
-    <div id="order" style="margin-top:28px">
-      <div class="section-title">Place an Order</div>
-      <div style="color:var(--muted)">Choose items, quantity and place your order. This form calculates the total for you.</div>
-
-      <div class="order-area" role="region" aria-label="Order form">
-        <!-- Item rows -->
-        <div id="order-items">
-          <!-- JS will populate rows here -->
-        </div>
-
-        <div class="order-summary">
-          <div style="color:var(--muted)">Subtotal</div>
-          <div class="total" id="order-total">₦0</div>
-        </div>
-
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center">
-          <input id="cust-name" placeholder="Your name" style="flex:1; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--white)">
-          <input id="cust-phone" placeholder="Phone / WhatsApp" style="width:180px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--white)">
-        </div>
-
-        <div style="display:flex; gap:10px; margin-top:12px; align-items:center">
-          <button id="submit-order" class="btn">Submit Order</button>
-          <button id="clear-order" class="btn secondary">Clear</button>
-          <div style="color:var(--muted); font-size:13px; margin-left:auto">Pickup or Local Delivery</div>
-        </div>
-
-        <div id="order-message" style="margin-top:12px;color:var(--muted); font-size:14px"></div>
-      </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1617196035905-0e409a7f6b63" alt="Beans and Plantain">
+      <h3>Beans and Plantain</h3>
+      <p class="price">₦1300</p>
     </div>
-  </main>
 
-  <!-- ABOUT / How we work (step by step) -->
-  <section id="about" class="container" style="padding-top:0">
-    <div class="section-title">How Big D Foods Works — step by step</div>
-    <div style="color:var(--muted)">We keep ordering simple. Follow these steps to get your food fast.</div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <div style="font-weight:700; margin-bottom:6px">Choose your meal</div>
-        <div style="color:var(--muted)">Browse the menu and pick the dish you want.</div>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <div style="font-weight:700; margin-bottom:6px">Place order</div>
-        <div style="color:var(--muted)">Use the order form above — enter name & phone, select items & quantities.</div>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <div style="font-weight:700; margin-bottom:6px">Confirm & pay</div>
-        <div style="color:var(--muted)">We will confirm your order by phone. (Payment options: cash on delivery — online payments can be added later.)</div>
-      </div>
-      <div class="step">
-        <div class="num">4</div>
-        <div style="font-weight:700; margin-bottom:6px">Pickup / Delivery</div>
-        <div style="color:var(--muted)">We prepare your food fresh and have it ready for pickup or deliver it to your location.</div>
-      </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc" alt="Bread and Tea">
+      <h3>Bread and Tea</h3>
+      <p class="price">₦1200</p>
     </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605478573248-642c1e8fa6d7" alt="Rice and Plantain">
+      <h3>Rice and Plantain</h3>
+      <p class="price">₦1700</p>
+    </div>
+
   </section>
 
-  <!-- CONTACT & FOOTER -->
-  <footer id="contact">
-    <div class="container" style="display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start; justify-content:space-between">
-      <div style="max-width:520px">
-        <div style="font-weight:800; font-size:18px; color:var(--white)">Big D Foods</div>
-        <div style="color:var(--muted); margin-top:8px">Local, homemade flavors. Call or WhatsApp to confirm orders and deliveries.</div>
-        <div style="margin-top:12px; color:var(--muted)">
-          <strong>Phone:</strong> +234 800 000 0000<br>
-          <strong>Address:</strong> Your Street, Your City (update as needed)
-        </div>
-      </div>
-
-      <div class="contact">
-        <div style="font-weight:700">Send a message</div>
-        <input id="msg-name" placeholder="Your name" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--white)">
-        <input id="msg-phone" placeholder="Phone" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--white)">
-        <textarea id="msg-body" placeholder="Message" rows="3" style="padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--white)"></textarea>
-        <div style="display:flex; gap:10px">
-          <button id="send-msg" class="btn">Send</button>
-          <div style="color:var(--muted); align-self:center; font-size:13px">Response within 24 hours</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="text-align:center; color:var(--muted); margin-top:18px">© <span id="year"></span> Big D Foods • Built with care</div>
+  <footer>
+    © 2025 Big D Foods. All Rights Reserved.
   </footer>
 
-  <script>
-    // Data for menu items (id, name, price)
-    const menu = [
-      { id: 'ricebeans', name: 'Rice & Beans', price: 1500 },
-      { id: 'beansplantain', name: 'Beans & Plantain', price: 1300 },
-      { id: 'beansyam', name: 'Beans & Yam', price: 1400 },
-      { id: 'indomieegg', name: 'Indomie & Egg', price: 1200 },
-      { id: 'breadtea', name: 'Bread & Tea', price: 1200 },
-      { id: 'riceplantain', name: 'Rice & Plantain', price: 1700 }
-    ];
-
-    const orderItemsContainer = document.getElementById('order-items');
-    const orderTotalEl = document.getElementById('order-total');
-    const submitBtn = document.getElementById('submit-order');
-    const clearBtn = document.getElementById('clear-order');
-    const orderMessage = document.getElementById('order-message');
-
-    // create rows dynamically
-    function buildOrderRows(){
-      orderItemsContainer.innerHTML = '';
-      menu.forEach(item => {
-        const row = document.createElement('div');
-        row.className = 'order-row';
-        row.innerHTML = `
-          <div style="flex:1; font-weight:700">${item.name}</div>
-          <div style="width:110px; text-align:right; color:var(--muted)">₦${item.price}</div>
-          <select data-id="${item.id}" style="width:120px;">
-            <option value="0">0 (none)</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        `;
-        orderItemsContainer.appendChild(row);
-      });
-
-      // attach change listener
-      orderItemsContainer.querySelectorAll('select').forEach(sel=>{
-        sel.addEventListener('change', calculateTotal);
-      });
-      calculateTotal();
-    }
-
-    function calculateTotal(){
-      let total = 0;
-      orderItemsContainer.querySelectorAll('select').forEach(sel=>{
-        const id = sel.dataset.id;
-        const qty = parseInt(sel.value || '0', 10);
-        const item = menu.find(m=>m.id===id);
-        if(item && qty>0) total += item.price * qty;
-      });
-      orderTotalEl.textContent = '₦' + total.toLocaleString();
-      return total;
-    }
-
-    submitBtn.addEventListener('click', ()=>{
-      const name = document.getElementById('cust-name').value.trim();
-      const phone = document.getElementById('cust-phone').value.trim();
-      if(!name || !phone){
-        orderMessage.style.color = '#ffb3a7';
-        orderMessage.textContent = 'Please enter your name and phone number before submitting.';
-        return;
-      }
-      const orderDetails = [];
-      orderItemsContainer.querySelectorAll('select').forEach(sel=>{
-        const qty = parseInt(sel.value||'0',10);
-        if(qty>0){
-          const item = menu.find(m=>m.id===sel.dataset.id);
-          orderDetails.push({ name:item.name, qty, price:item.price, subtotal: item.price*qty });
-        }
-      });
-      const total = calculateTotal();
-      if(orderDetails.length === 0){
-        orderMessage.style.color = '#ffb3a7';
-        orderMessage.textContent = 'Please select at least one item to order.';
-        return;
-      }
-
-      // Simulate order submission (replace with real API/backend later)
-      const summaryLines = orderDetails.map(d=>`${d.qty} x ${d.name} — ₦${d.subtotal}`).join('\\n');
-      const summary = `Order from ${name} (${phone})\\n\\n${summaryLines}\\n\\nTotal: ₦${total.toLocaleString()}`;
-      // show message (in real site, send to backend or WhatsApp API)
-      orderMessage.style.color = '#b0f2c9';
-      orderMessage.textContent = 'Order placed! We will call to confirm. Summary (preview below).';
-      alert('ORDER SUMMARY:\\n\\n' + summary);
-
-      // Reset form lightly
-      document.getElementById('cust-name').value = '';
-      document.getElementById('cust-phone').value = '';
-      orderItemsContainer.querySelectorAll('select').forEach(s=> s.value = '0');
-      calculateTotal();
-    });
-
-    clearBtn.addEventListener('click', ()=>{
-      document.getElementById('cust-name').value = '';
-      document.getElementById('cust-phone').value = '';
-      orderItemsContainer.querySelectorAll('select').forEach(s=> s.value = '0');
-      calculateTotal();
-      orderMessage.textContent = '';
-    });
-
-    // message send (contact)
-    document.getElementById('send-msg').addEventListener('click', ()=>{
-      const n = document.getElementById('msg-name').value.trim();
-      const p = document.getElementById('msg-phone').value.trim();
-      const b = document.getElementById('msg-body').value.trim();
-      if(!n || !p || !b){
-        alert('Please fill name, phone and message.');
-        return;
-      }
-      alert('Message sent. We will contact you soon.\\n\\n' + n + ' • ' + p + '\\n' + b);
-      document.getElementById('msg-name').value=''; document.getElementById('msg-phone').value=''; document.getElementById('msg-body').value='';
-    });
-
-    // initial
-    buildOrderRows();
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // smooth scroll for nav anchors
-    document.querySelectorAll('.nav-links a').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        if(a.hash){
-          e.preventDefault();
-          const el = document.querySelector(a.hash);
-          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      });
-    });
-  </script>
 </body>
 </html>
