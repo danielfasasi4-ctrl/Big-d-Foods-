@@ -28,3 +28,4 @@ This project was created to showcase a professional restaurant landing page with
 ---
 
 © 2025 **Big D Foods**. All rights reserved.
+<!-- site update -->
