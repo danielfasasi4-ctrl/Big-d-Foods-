@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Big D Foods — Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#caa84f;--muted:#c3c7c8}
+*{box-sizing:border-box}body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,rgba(255,250,240,0.6),rgba(250,244,230,0.6)), url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80') center/cover fixed no-repeat;color:#111}
+.header{position:fixed;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(0,0,0,0.28);backdrop-filter:blur(4px);z-index:40}
+.logo{display:flex;align-items:center;gap:12px;color:var(--gold);font-weight:800}
+.logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#b88735);display:flex;align-items:center;justify-content:center;color:#111;font-weight:900}
+.nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:16px;font-weight:700}
+.container{max-width:1100px;margin:110px auto 60px;padding:0 18px}
+.section-title{font-weight:800;font-size:20px;color:#111;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+.card{background:rgba(255,255,255,0.9);border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);color:#111}
+.card img{width:100%;height:160px;object-fit:cover;display:block}
+.meta{padding:12px;display:flex;justify-content:space-between;align-items:center}
+.meta .title{font-weight:800}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:800}
+.order-area{margin-top:26px;background:rgba(255,255,255,0.92);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.06)}
+.order-row{display:flex;gap:8px;align-items:center;margin:8px 0}
+input[type=number]{width:90px;padding:8px;border:1px solid rgba(0,0,0,0.06);border-radius:8px}
+.total{font-weight:900;color:var(--gold);font-size:18px}
+.footer{padding:28px;text-align:center;color:rgba(0,0,0,0.6);margin-top:40px}
+@media(max-width:900px){.container{margin-top:100px;padding:12px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><div class="mark">🍽</div><div>Big D Foods<br/><span style="font-size:12px;color:var(--muted)">Where Taste Meets Class</span></div></div>
+  <nav class="nav"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<main class="container">
+  <h2 class="section-title">Our Menu</h2>
+  <p style="color:var(--muted)">Tap "Order Now" to open the Selar checkout in a new tab. 10% discount applies for 5+ plates when ordering on this page's quick-order.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1612197527762-83dfaa6a0fa7" alt="Rice and Beans">
+      <div class="meta"><div class="title">Rice &amp; Beans</div><div style="font-weight:900;color:var(--gold)">₦1,500</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/8115u4c13c" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1617196035905-0e409a7f6b63" alt="Beans and Plantain">
+      <div class="meta"><div class="title">Beans &amp; Plantain</div><div style="font-weight:900;color:var(--gold)">₦1,300</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/b137u68oe6" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604156789338-316d6ab96cc5" alt="Beans and Yam">
+      <div class="meta"><div class="title">Beans &amp; Yam</div><div style="font-weight:900;color:var(--gold)">₦1,400</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/qp97x8m18r" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588165103111-9c44a4c3c1a4" alt="Fried Indomie">
+      <div class="meta"><div class="title">Fried Indomie</div><div style="font-weight:900;color:var(--gold)">₦1,100</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/86y541gk4q" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc" alt="Bread and Tea">
+      <div class="meta"><div class="title">Bread &amp; Tea</div><div style="font-weight:900;color:var(--gold)">₦1,200</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/28lp7v1951" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605478573248-642c1e8fa6d7" alt="Rice and Plantain">
+      <div class="meta"><div class="title">Rice &amp; Plantain</div><div style="font-weight:900;color:var(--gold)">₦1,700</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/77r6558256" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1587391420160-9b16b1928f25" alt="Indomie and Egg">
+      <div class="meta"><div class="title">Indomie &amp; Egg</div><div style="font-weight:900;color:var(--gold)">₦1,200</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/b137u68oe6" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a7c7d9" alt="Bread and Egg">
+      <div class="meta"><div class="title">Bread &amp; Egg</div><div style="font-weight:900;color:var(--gold)">₦900</div></div>
+      <div style="padding:0 12px 16px"><a class="btn" href="https://selar.com/6516799097" target="_blank" rel="noopener">Order Now</a></div>
+    </div>
+  </div>
+
+  <section style="margin-top:22px">
+    <h3 style="margin:0">Quick Order (calculate & open Selar)</h3>
+    <p style="color:var(--muted);margin-top:6px">Enter quantities, then press <strong>Place Order</strong>. Each selected item opens its Selar product page in a new tab so the customer can pay.</p>
+    <div class="order-area">
+      <div id="orderRows"></div>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+        <input id="custName" placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);">
+        <input id="custPhone" placeholder="Phone/WhatsApp" style="width:180px;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+        <div style="color:var(--muted)">Subtotal</div>
+        <div class="total" id="subtotal">₦0</div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <button id="orderBtn" class="btn">Place Order</button>
+        <button id="clearBtn" class="btn" style="background:transparent;border:1px solid rgba(0,0,0,0.06)">Clear</button>
+        <div style="color:var(--muted);margin-left:auto">10% off for 5+ plates</div>
+      </div>
+      <div id="orderMsg" style="margin-top:12px;color:var(--muted)"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">© 2025 Big D Foods. All rights reserved.</footer>
+
+<script>
+const menu = [
+  {id:'ricebeans',name:'Rice & Beans',price:1500,link:'https://selar.com/8115u4c13c'},
+  {id:'beansplantain',name:'Beans & Plantain',price:1300,link:'https://selar.com/b137u68oe6'},
+  {id:'beansyam',name:'Beans & Yam',price:1400,link:'https://selar.com/qp97x8m18r'},
+  {id:'friedindomie',name:'Fried Indomie',price:1100,link:'https://selar.com/86y541gk4q'},
+  {id:'breadtea',name:'Bread & Tea',price:1200,link:'https://selar.com/28lp7v1951'},
+  {id:'riceplantain',name:'Rice & Plantain',price:1700,link:'https://selar.com/77r6558256'},
+  {id:'indomieegg',name:'Indomie & Egg',price:1200,link:'https://selar.com/b137u68oe6'},
+  {id:'breadegg',name:'Bread & Egg',price:900,link:'https://selar.com/6516799097'}
+];
+
+const orderRows = document.getElementById('orderRows');
+const subtotalEl = document.getElementById('subtotal');
+const orderMsg = document.getElementById('orderMsg');
+
+function buildOrderUI(){
+  orderRows.innerHTML = '';
+  menu.forEach(item=>{
+    const row = document.createElement('div');
+    row.className = 'order-row';
+    row.innerHTML = `<div style="flex:1;font-weight:700">${item.name}</div>
+      <div style="width:110px;text-align:right;color:var(--muted)">₦${item.price}</div>
+      <input type="number" data-id="${item.id}" min="0" value="0">`;
+    orderRows.appendChild(row);
+  });
+
+  orderRows.querySelectorAll('input[type=number]').forEach(inp=>inp.addEventListener('input',calcTotal));
+  calcTotal();
+}
+
+function calcTotal(){
+  let total=0; let qtyTotal=0;
+  orderRows.querySelectorAll('input[type=number]').forEach(inp=>{
+    const q = parseInt(inp.value||'0',10);
+    const item = menu.find(m=>m.id===inp.dataset.id);
+    if(q>0){ total += item.price * q; qtyTotal += q; }
+  });
+  let discount = 0;
+  if(qtyTotal >= 5) discount = Math.round(total * 0.10);
+  const finalTotal = total - discount;
+  subtotalEl.textContent = '₦' + finalTotal.toLocaleString();
+  orderMsg.textContent = discount>0 ? `Discount applied: ₦${discount.toLocaleString()}` : '';
+  return {total,discount,finalTotal,qtyTotal};
+}
+
+document.getElementById('orderBtn').addEventListener('click',()=>{
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  if(!name || !phone){ orderMsg.style.color='#b33'; orderMsg.textContent='Please enter your name and phone.'; return; }
+  const {total,discount,finalTotal,qtyTotal} = calcTotal();
+  if(finalTotal === 0){ orderMsg.style.color='#b33'; orderMsg.textContent='Please select at least one item.'; return; }
+  const lines = [];
+  orderRows.querySelectorAll('input[type=number]').forEach(inp=>{
+    const q = parseInt(inp.value||'0',10);
+    if(q>0){
+      const item = menu.find(m=>m.id===inp.dataset.id);
+      lines.push(q+' x '+item.name+' — ₦'+(item.price*q));
+    }
+  });
+  const summary = `Order from ${name} (${phone}\n)\n${lines.join('\n')}\n\nSubtotal: ₦${total.toLocaleString()}\nDiscount: ₦${discount.toLocaleString()}\nTotal: ₦${finalTotal.toLocaleString()}`;
+  orderMsg.style.color='#0a0'; orderMsg.textContent='Order received — opening Selar links in new tabs.';
+  alert('ORDER SUMMARY:\n\n'+summary+'\n\nYou will be redirected to the Selar product pages to complete payment.');
+  // open each selected product page in a new tab
+  orderRows.querySelectorAll('input[type=number]').forEach(inp=>{
+    const q = parseInt(inp.value||'0',10);
+    if(q>0){
+      const item = menu.find(m=>m.id===inp.dataset.id);
+      window.open(item.link, '_blank');
+    }
+  });
+  // reset
+  document.getElementById('custName').value=''; document.getElementById('custPhone').value='';
+  orderRows.querySelectorAll('input[type=number]').forEach(i=>i.value='0'); calcTotal();
+});
+
+document.getElementById('clearBtn').addEventListener('click',()=>{ document.getElementById('custName').value=''; document.getElementById('custPhone').value=''; orderRows.querySelectorAll('input[type=number]').forEach(i=>i.value='0'); calcTotal(); orderMsg.textContent=''; });
+
+buildOrderUI();
+</script>
+</body>
+</html>
